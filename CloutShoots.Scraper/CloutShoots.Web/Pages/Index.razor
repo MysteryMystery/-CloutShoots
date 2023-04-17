@@ -1,0 +1,62 @@
+﻿@page "/"
+@using CloutShoots.Common.Models;
+
+@inject HttpClient HttpClient;
+
+<PageTitle>Index</PageTitle>
+
+<div class="container-fluid">
+    @if (cloutShoots is not null)
+    {
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Venue</th>
+                    <th>Round</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Form</th>
+                    <th scope="col">Maps</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var cloutShoot in cloutShoots)
+                {
+                    <tr>
+                        <th scope="row">@((MarkupString)cloutShoot.Name)</th>
+                        <td>@(cloutShoot.Name.Contains("*") ? "Imperial" : "Metric")</td>
+                        <td>@cloutShoot.Date.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            @if(cloutShoot.FormUrl is not null){
+                                <a class="btn btn-primary" href="@cloutShoot.FormUrl" target="_blank">Form</a>
+                            }
+                        </td>
+                        <td>
+                            @if (cloutShoot.MapUrl is not null)
+                            {
+                                <a class="btn btn-secondary" href="@cloutShoot.MapUrl" target="_blank">Google Maps</a>                                
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+@code {
+    private int accordionCount = 0;
+    private List<CloutShoot> cloutShoots = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var shoots = await HttpClient.GetFromJsonAsync<List<CloutShoot>>("/shoots/CloutShoots.json");
+        cloutShoots = shoots.Select(s =>
+            {
+                s.Guid = Guid.NewGuid();
+                return s;
+            })
+            .OrderBy(c => c.Date)
+            .ToList();
+    }
+}
