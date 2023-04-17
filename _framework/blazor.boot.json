@@ -1,0 +1,63 @@
+{
+  "cacheBootResources": true,
+  "config": [ ],
+  "debugBuild": false,
+  "entryAssembly": "CloutShoots.Web",
+  "icuDataMode": 0,
+  "linkerEnabled": true,
+  "resources": {
+    "assembly": {
+      "CloutShoots.Common.dll": "sha256-sQLTKggV+F76sSbTKk2ccKZ\/r6Y6h3e7EtyYZ3jC4Bc=",
+      "CloutShoots.Web.dll": "sha256-avOAoxFcBtyDvS0dl\/ZfcpR6ZuhzFbd+QBPTHV32I80=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-xY6QLOgazIVcw9surRL\/7CvYXgNE2K1\/AnPQFvr2c3c=",
+      "Microsoft.AspNetCore.Components.Web.dll": "sha256-qU3IAmEqXKihCR1jmqNwiQI3vuEaPjNm9Fl+CA7mchs=",
+      "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-2n94FDGpkN1cvoXLu6PLx58lOudbge2yTEEF195Di30=",
+      "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-yNUivmV4a48Mkbc1Sz+XJ9Y8moJKjWJo6Z0haFMFrKQ=",
+      "Microsoft.Extensions.Configuration.dll": "sha256-OWH+xkIa4nRWGQutqm7dxgAY22jFGJlC+P6RzpDPrBE=",
+      "Microsoft.Extensions.Configuration.Json.dll": "sha256-boSewHLerYdMMQk1EahIMSbAXSrf7Kgky4CGjZ3uuto=",
+      "Microsoft.Extensions.DependencyInjection.Abstractions.dll": "sha256-NAceT7aKzqRsGogCe8UyBWF01R1Qga83gXtq+v3p9V4=",
+      "Microsoft.Extensions.DependencyInjection.dll": "sha256-azTt1JLi4RL0qaUPW8um+3BlO1IxYfZUaUP+kmJ6E6Y=",
+      "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-i02pk6hHEps7L64\/SZEzSOgClK+0JgQWMWsU22Rt+ME=",
+      "Microsoft.Extensions.Logging.dll": "sha256-uvQcmI6XrSMo7BLb8B56Haq\/wjzfQPy1LJw48RmEmDs=",
+      "Microsoft.Extensions.Options.dll": "sha256-T5jVw2iu5DWOW7fDB+sTItI3LDyjsz2wT4pCJl0cma8=",
+      "Microsoft.Extensions.Primitives.dll": "sha256-Kk9trPYi6xuop+bJh7AertZVcNJkEyzyxW3andlyf5U=",
+      "Microsoft.JSInterop.dll": "sha256-FmWkCNSUWh9oEGa1sKhfxQ\/3ydOlciEtF2lyI3hUKbI=",
+      "Microsoft.JSInterop.WebAssembly.dll": "sha256-5rjENboVhqNLvFRQlepT4PYJ6Jo8jamVzm\/ujRo7Qd4=",
+      "System.Collections.Concurrent.dll": "sha256-t+QzgEWKaj0rF6QRkzKRn4E0Q2SWTo2\/h1Ma08fygtg=",
+      "System.Collections.dll": "sha256-yjbRq9lTfnSef2U8mBjCIegWEhsq96lRCqMbaN1hBe4=",
+      "System.ComponentModel.dll": "sha256-vSNdLXtZ4sC9B2tUzcKJQ7dk+i0+c82ohxydD+7oq5s=",
+      "System.Linq.dll": "sha256-kedQGxzGTIUbObnb0eV3705J0z0cmZCi3ZbJ1+stPFg=",
+      "System.Memory.dll": "sha256-nx4JE6gID87G+SeYneVFUKNiaTPrSRoLBTdZZDx4QQ0=",
+      "System.Net.Http.dll": "sha256-hL1JUrkg5SieafzumtWob5Kq21aiMOsr6veabUnWgJc=",
+      "System.Net.Http.Json.dll": "sha256-l7wdVDFHPwD0WCPukPGe5q0UAIsNk\/xM98YsD3Ow9h8=",
+      "System.Net.Primitives.dll": "sha256-ruwWT9i+NgNFjejCh+SGfzIUHDj0Xt5Vmf9j8g0sL0o=",
+      "System.Private.CoreLib.dll": "sha256-S1u348zEQ+0y3BWUSvxwJOzuvCNsZv5CbLqhV3sjWHc=",
+      "System.Private.Runtime.InteropServices.JavaScript.dll": "sha256-pF83fHY32y+ih1MzYMdgkSHa1OxLmmNlqe41hq00GjA=",
+      "System.Private.Uri.dll": "sha256-32X8msK83iTcMoHcPhzkmEKKercgTn35+nrmDYZ6\/v4=",
+      "System.Runtime.CompilerServices.Unsafe.dll": "sha256-sT1INlIQWqwoiLX8hicyn2J+qB3TT6mNeJQrLUWgoI4=",
+      "System.Runtime.dll": "sha256-iuPhradO7\/Tvpa22HfvGTIvE3fHCdIpAMMlKtALCnYU=",
+      "System.Text.Encodings.Web.dll": "sha256-rWJD+ifyLcjEKmB1Ql5imXF9M1HR\/bWFtkTs\/6lBVIc=",
+      "System.Text.Json.dll": "sha256-BadJe+zxLqhDYwqw0F0TGJLp\/6SIVi7zXbZOPIz1sQQ="
+    },
+    "extensions": null,
+    "lazyAssembly": null,
+    "libraryInitializers": null,
+    "pdb": null,
+    "runtime": {
+      "dotnet.6.0.15.14oba7qsxh.js": "sha256-fb2wBZaRp096nChMG9nDNEcW0kW1whA\/kfQNyH+5QpQ=",
+      "dotnet.timezones.blat": "sha256-Kk7cP\/f+hcBvv5Gh+QJctH\/6vm3yehrEjWqys4FAads=",
+      "dotnet.wasm": "sha256-6isEmuzb9IPVhpu8FVGE1zbisPkRp59lzqd1BD8nANI=",
+      "icudt_CJK.dat": "sha256-WPyI4hWDPnOw62Nr27FkzGjdbucZnQD+Ph+GOPhAedw=",
+      "icudt_EFIGS.dat": "sha256-4RwaPx87Z4dvn77ie\/ro3\/QzyS+\/gGmO3Y\/0CSAXw4k=",
+      "icudt_no_CJK.dat": "sha256-OxylFgLJlFqixsj+nLxYVsv5iZLvfIKMpLf9hrWaChA=",
+      "icudt.dat": "sha256-Zuq0dWAsBm6\/2lSOsz7+H9PvFaRn61KIXHMMwXDfvyE="
+    },
+    "runtimeAssets": {
+      "dotnet.wasm": {
+        "behavior": "dotnetwasm",
+        "hash": "sha256-6isEmuzb9IPVhpu8FVGE1zbisPkRp59lzqd1BD8nANI="
+      }
+    },
+    "satelliteResources": null
+  }
+}
