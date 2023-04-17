@@ -217,7 +217,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-camxRgUtRzKEOA0whqG4ujVvkUOT3JU2UAF4OP1PtF0=",
+      "hash": "sha256-nkM+o2ERjn+f4zzT+FM\/Vbfb1voyd2UzoodN2y4wOOw=",
       "url": "index.html"
     },
     {
@@ -233,5 +233,5 @@
       "url": "shoots\/CloutShoots.json"
     }
   ],
-  "version": "+92RVwkS"
+  "version": "ezfFKLQg"
 };
