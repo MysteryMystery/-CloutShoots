@@ -8,7 +8,7 @@
   "resources": {
     "assembly": {
       "CloutShoots.Common.dll": "sha256-sQLTKggV+F76sSbTKk2ccKZ\/r6Y6h3e7EtyYZ3jC4Bc=",
-      "CloutShoots.Web.dll": "sha256-avOAoxFcBtyDvS0dl\/ZfcpR6ZuhzFbd+QBPTHV32I80=",
+      "CloutShoots.Web.dll": "sha256-IwSu7mp8c4kPZayzaNWNz9iduBJoj7jaQsb82uOyKlc=",
       "Microsoft.AspNetCore.Components.dll": "sha256-xY6QLOgazIVcw9surRL\/7CvYXgNE2K1\/AnPQFvr2c3c=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-qU3IAmEqXKihCR1jmqNwiQI3vuEaPjNm9Fl+CA7mchs=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-2n94FDGpkN1cvoXLu6PLx58lOudbge2yTEEF195Di30=",

@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-zG1yYSsO+ixhaKAm0Qz9lmimuPwH8BYc9v8afSF3Wfo=",
+      "hash": "sha256-kB3yVODepp3MNUAzHTc\/IYk3Plj9nIHHygBsiqcbFOA=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -41,7 +41,7 @@
       "url": "_framework\/CloutShoots.Common.dll"
     },
     {
-      "hash": "sha256-avOAoxFcBtyDvS0dl\/ZfcpR6ZuhzFbd+QBPTHV32I80=",
+      "hash": "sha256-IwSu7mp8c4kPZayzaNWNz9iduBJoj7jaQsb82uOyKlc=",
       "url": "_framework\/CloutShoots.Web.dll"
     },
     {
@@ -233,5 +233,5 @@
       "url": "shoots\/CloutShoots.json"
     }
   ],
-  "version": "ezfFKLQg"
+  "version": "9RXsFAHi"
 };
