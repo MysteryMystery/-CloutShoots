@@ -2,7 +2,9 @@
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -40,32 +42,50 @@ namespace CloutShoots.Scraper
 
             foreach (var tr in trs)
             {
-                string name = tr.Descendants("div")
-                    .Where(e => e.GetAttributeValue("class", "").Equals("tY1czp") && !e.InnerHtml.Equals("Entry"))
-                    .First().InnerText;
+                // there are 5 of these 
+                // 0 - date
+                // 1 - shoot name
+                // 2 - parking (what 3 words)
+                // 3 - entry form link 
+                // 4 - results url
 
-                string date = tr.Descendants("div")
-                    .Where(e => e.GetAttributeValue("class", "").Equals("L0MOmM") && !e.InnerHtml.Equals("Entry"))
-                    .First().InnerText;
-                DateTime dateTime = DateTime.Parse(date);
-
-                var links = tr.Descendants("a")
-                    .Where(e => !string.IsNullOrEmpty(e.GetAttributeValue("href", "")));
-                string mapUrl = links.First()
-                    .GetAttributeValue("href", null);
-
-                string? formUrl = links.Skip(1)
+                var tds = tr.Descendants("td");
+                DateTime dateTime = DateTime.Parse(tds.First().Descendants("div").First().InnerHtml);
+                
+                var venueTd = tds.Skip(1).First();
+                string? name = venueTd.Descendants("div")
                     .FirstOrDefault()
-                    ?.GetAttributeValue("href", null);
+                    ?.InnerHtml;
+                string? mapUrl = venueTd.Descendants("a")
+                    .FirstOrDefault()
+                    ?.GetAttributeValue("href", "");
 
+                string? whatThreeWords = tds.Skip(2)
+                    .First()
+                    .Descendants("a")
+                    .FirstOrDefault()
+                    ?.GetAttributeValue("href", "");
+
+                string? formUrl = tds.Skip(3)
+                    .First()
+                    .Descendants("a")
+                    .FirstOrDefault()
+                    ?.GetAttributeValue("href", "");
+                string? resultsUrl = tds.Skip(4)
+                    .First()
+                    .Descendants("a")
+                    .FirstOrDefault()
+                    ?.GetAttributeValue("href", "");
 
 
                 _cloutShoots.Add(new CloutShoot
                 {
-                    Name = name,
+                    Name = name ?? "",
                     MapUrl = mapUrl,
                     FormUrl = formUrl,
-                    Date = dateTime
+                    Date = dateTime,
+                    WhatThreeWords = whatThreeWords,
+                    ResultsUrl = resultsUrl
                 });
             }
         }
@@ -79,6 +99,9 @@ namespace CloutShoots.Scraper
             }
 
             string json = JsonSerializer.Serialize(this._cloutShoots);
+
+            Console.WriteLine(json);
+
             using (StreamWriter streamWriter = new StreamWriter(SaveLocation + "/" + SaveFile))
             {
                 streamWriter.Write(json);

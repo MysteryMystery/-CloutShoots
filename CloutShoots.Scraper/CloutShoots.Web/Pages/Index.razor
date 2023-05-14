@@ -50,7 +50,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var shoots = await HttpClient.GetFromJsonAsync<List<CloutShoot>>("/shoots/CloutShoots.json");
+        var shoots = await HttpClient.GetFromJsonAsync<List<CloutShoot>>("/-CloutShoots/shoots/CloutShoots.json");
         cloutShoots = shoots.Select(s =>
             {
                 s.Guid = Guid.NewGuid();
