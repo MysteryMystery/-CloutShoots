@@ -31,8 +31,7 @@ namespace CloutShoots.Scraper
             return await response.Content.ReadAsStringAsync();
         }
 
-        public void ParseShoots(string html)
-        {
+        public void ParseShoots(string html, ParseSpec parseSpec) { 
             HtmlDocument htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(html);
 
@@ -42,50 +41,17 @@ namespace CloutShoots.Scraper
 
             foreach (var tr in trs)
             {
-                // there are 5 of these 
-                // 0 - date
-                // 1 - shoot name
-                // 2 - parking (what 3 words)
-                // 3 - entry form link 
-                // 4 - results url
-
                 var tds = tr.Descendants("td");
-                DateTime dateTime = DateTime.Parse(tds.First().Descendants("div").First().InnerHtml);
-                
-                var venueTd = tds.Skip(1).First();
-                string? name = venueTd.Descendants("div")
-                    .FirstOrDefault()
-                    ?.InnerHtml;
-                string? mapUrl = venueTd.Descendants("a")
-                    .FirstOrDefault()
-                    ?.GetAttributeValue("href", "");
-
-                string? whatThreeWords = tds.Skip(2)
-                    .First()
-                    .Descendants("a")
-                    .FirstOrDefault()
-                    ?.GetAttributeValue("href", "");
-
-                string? formUrl = tds.Skip(3)
-                    .First()
-                    .Descendants("a")
-                    .FirstOrDefault()
-                    ?.GetAttributeValue("href", "");
-                string? resultsUrl = tds.Skip(4)
-                    .First()
-                    .Descendants("a")
-                    .FirstOrDefault()
-                    ?.GetAttributeValue("href", "");
-
+                CloutShootTableParser parser = new CloutShootTableParser(tds, parseSpec);
 
                 _cloutShoots.Add(new CloutShoot
                 {
-                    Name = name ?? "",
-                    MapUrl = mapUrl,
-                    FormUrl = formUrl,
-                    Date = dateTime,
-                    WhatThreeWords = whatThreeWords,
-                    ResultsUrl = resultsUrl
+                    Name = parser.ParseName() ?? "",
+                    MapUrl = parser.ParseMapUrl(),
+                    FormUrl = parser.ParseFormUrl(),
+                    Date = parser.ParseDate(),
+                    WhatThreeWords = parser.ParseWhatThreeWords(),
+                    ResultsUrl = parser.ParseResultsUrl()
                 });
             }
         }
@@ -106,6 +72,11 @@ namespace CloutShoots.Scraper
             {
                 streamWriter.Write(json);
             }
+        }
+
+        public void Reset()
+        {
+            _cloutShoots = new List<CloutShoot>();
         }
     }
 }
